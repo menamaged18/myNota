@@ -1,0 +1,39 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+
+/* "My Notes" logo */
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+
+#logo {
+    text-decoration: none !important;
+    color: #333;
+}
+
+/* Links Style */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
