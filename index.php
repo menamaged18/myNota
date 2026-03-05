@@ -18,8 +18,9 @@ $router = new Router($routes);
 
 // Get current URI
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$method = $_SERVER['REQUEST_METHOD'];
 
 // Dispatch request
-$router->dispatch($requestUri);
+$router->dispatch($requestUri, $method);
 
 // require 'test.php';

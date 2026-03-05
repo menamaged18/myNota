@@ -1,0 +1,23 @@
+my-php-project/
+├── controllers/
+│   ├── AboutController.php
+│   ├── HomeController.php
+│   ├── NoteController.php
+│   └── NoteDetailsController.php
+├── model/
+│   ├── Note.php
+│   └── NoteDetails.php
+├── views/
+│   ├── note.php
+│   ├── partials/
+│   │   ├── nav/
+│   │   │   └── nav.php
+│   │   └── Header.php
+│   └── styles/
+│       ├── home.css
+│       └── navStyle.css
+├── Router.php
+├── routes.php
+├── index.php
+├── database.php
+└── Config.php

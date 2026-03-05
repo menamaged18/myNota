@@ -20,6 +20,7 @@ class Note {
         return null; // Return null if not found
     }
 
+    // get user notes
     public static function getAllUserNotes($id){
         global $db;
         try {
@@ -30,5 +31,39 @@ class Note {
         } catch (PDOException $e) {
             die("Query failed: " . $e->getMessage());
         }
+    }
+    
+    // Add a new note
+    public static function create($userId, $title) {
+        global $db;
+        return $db->query("INSERT INTO notes (user_id, title) VALUES (:user_id, :title)", [
+            'user_id' => $userId,
+            'title'   => $title
+        ]);
+    }
+
+    // Change the title of an existing noteId
+    public static function update($noteId, $title) {
+        global $db;
+        return $db->query("UPDATE notes SET title = :title WHERE id = :id", [
+            'id'    => $noteId,
+            'title' => $title
+        ]);
+    }
+
+    // Remove a note by its ID
+    public static function delete($id) {
+        global $db;
+        return $db->query("DELETE FROM notes WHERE id = :id", [
+            'id' => $id
+        ]);
+    }
+    
+    // Fetch a single note 
+    public static function find($id) {
+        global $db;
+        return $db->query("SELECT * FROM notes WHERE id = :id", [
+            'id' => $id
+        ])->fetch();
     }
 }
