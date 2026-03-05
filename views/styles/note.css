@@ -114,3 +114,69 @@
     color: #333;
     text-decoration: underline;
 }
+
+/* Layout & Header */
+.header-actions { margin-bottom: 1rem; }
+.btn-back { text-decoration: none; color: #3498db; font-weight: 500; }
+
+/* Add Detail Form */
+.add-detail-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.add-detail-form input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    outline: none;
+}
+
+.btn-add-detail {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Detail Item Actions */
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+}
+.status-dot.checked { background: #2ecc71; }
+
+.item-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.action-link {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.action-link.edit { color: #3498db; }
+.action-link.delete { color: #e74c3c; }
+.action-link:hover { text-decoration: underline; }

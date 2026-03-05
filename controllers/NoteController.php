@@ -25,7 +25,7 @@ class NoteController
             exit;
         }
 
-        $userId = 1; // Hard‑coded for now; you should use the logged‑in user’s ID
+        $userId = 1; // Hard‑coded for now
         $title = trim($_POST['title'] ?? '');
 
         if (!empty($title)) {
