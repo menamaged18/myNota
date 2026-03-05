@@ -4,13 +4,17 @@
     </div>
     
     <ul class="notes-list">
-        <?php foreach ($notes as $note): ?>
-            <li class="note-item">
-                <a href="/note/<?= $note['id'] ?>" class="note-link">
-                    <span class="note-text"><?= htmlspecialchars($note['body']) ?></span>
-                    <span class="arrow">&rarr;</span>
-                </a>
-            </li>
-        <?php endforeach; ?>
+        <?php if (!empty($notes)): ?>
+            <?php foreach ($notes as $note): ?>
+                <li class="note-item">
+                    <a href="/note/<?= $note['id'] ?>" class="note-link">
+                        <span class="note-text"><?= htmlspecialchars($note['title']) ?></span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No notes found. Time to create one!</p>
+        <?php endif; ?>
     </ul>
 </div>

@@ -19,4 +19,16 @@ class Note {
         }
         return null; // Return null if not found
     }
+
+    public static function getAllUserNotes($id){
+        global $db;
+        try {
+            $results = $db->query("SELECT * FROM notes WHERE user_id = :id", [
+                'id' => $id
+            ])->fetchAll();
+            return $results;
+        } catch (PDOException $e) {
+            die("Query failed: " . $e->getMessage());
+        }
+    }
 }

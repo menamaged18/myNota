@@ -1,0 +1,34 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE notes (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE note_details (
+    id SERIAL PRIMARY KEY,
+    note_id INT REFERENCES notes(id) ON DELETE CASCADE,
+    content TEXT NOT NULL,
+    checked BOOLEAN DEFAULT FALSE
+);
+
+
+-------------- values -------------------
+
+-- 1. Create the user
+INSERT INTO users (username) VALUES ('user-1');
+
+-- 2. Create the notes for user_id = 1
+INSERT INTO notes (user_id, title) VALUES 
+(1, 'doctor meeting tomorrow'),
+(1, 'create project');
+
+-- 3. Create the notes for note_id = 1
+INSERT INTO note_details (note_id, content, checked) VALUES 
+(1, 'finish note details model', true),
+(1, 'make style for note details model', true),
+(1, 'replace models with sql models', false);
